@@ -1,0 +1,105 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Arial', sans-serif;
+}
+
+/* Pengaturan body */
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(135deg, #ff7e5f, #feb47b);
+   padding: 20px;
+}
+
+/* Pengaturan signup-container */
+.signup-container {
+   background: rgba(255, 255, 255, 0.9);
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   width: 100%;
+   max-width: 400px;
+}
+
+/* Pengaturan h1 di dalam signup-container */
+.signup-container h1 {
+   margin-bottom: 20px;
+   font-size: 2em;
+   color: #333;
+}
+
+/* Pengaturan input-group */
+.input-group {
+   margin-bottom: 15px;
+   text-align: left;
+}
+
+/* Pengaturan label di dalam input-group */
+.input-group label {
+   display: block;
+   margin-bottom: 5px;
+   color: #333;
+}
+
+/* Pengaturan input di dalam input-group */
+.input-group input {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+/* Pengaturan button */
+button {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 5px;
+   background: #ff7e5f;
+   color: white;
+   font-size: 1em;
+   cursor: pointer;
+   transition: background 0.3s ease;
+}
+
+/* Pengaturan button saat di-hover */
+button:hover {
+   background: #feb47b;
+}
+
+/* Pengaturan login-link */
+.login-link {
+   margin-top: 10px;
+   color: #333;
+}
+
+/* Pengaturan a di dalam login-link */
+.login-link a {
+   color: #ff7e5f;
+   text-decoration: none;
+}
+
+/* Pengaturan a di dalam login-link saat di-hover */
+.login-link a:hover {
+   text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+   .signup-container {
+       padding: 15px;
+   }
+
+   .signup-container h1 {
+       font-size: 1.5em;
+   }
+
+   button {
+       font-size: 0.9em;
+   }
+}

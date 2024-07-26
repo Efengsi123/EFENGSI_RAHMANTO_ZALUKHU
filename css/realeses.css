@@ -1,0 +1,795 @@
+
+*{
+   padding: 0px;
+   margin: 0px;
+   font-family: poppins;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: black;
+   color: #fff;
+
+   /* ======================== agar user tidak bisa mendrag dan memblok gambar, teks yg ada di halaman web */
+   -user-drag: none;
+   -webkit-user-drag: none;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+header {
+   /* width: 100%;
+   height: 580px;
+   position: relative;
+   background-size: cover; */
+  
+   width: 100%;
+   height: 580px;
+   background-size: cover;
+   background-position: center;
+   position: relative;
+   transition: background-image 1s ease-in-out;
+}
+
+main {
+   display: block;
+}
+
+/* ============================== Cover ========================= */
+
+
+.header-content {
+   position: absolute;
+   bottom: 60px;
+   left: 40px;
+   color: #fff;
+   font-family: 'Poppins', sans-serif;
+   max-width: 50%;
+   background: rgba(0, 0, 0, 0.5);
+   border-radius: 6px;
+}
+
+
+.nav-container {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+}
+
+.rating, .kotak-rating, .kotakHarga, .director, .deskripsi, .actor {
+   margin-bottom: 10px;
+}
+.rating span, .gendre span {
+   display: inline-block;
+   margin-right: 5px;
+}
+
+.rating {
+   margin: 5px;
+   color: #ffcc00;
+} 
+
+.umur {
+   margin: 5px;
+}
+
+.tahun {
+   margin: 5px;
+}
+
+.episode {
+   margin: 5px;
+}
+
+.bx-star {
+  color: #ffcc00;
+}
+
+.title-background {
+   color: #fff;
+}
+
+.harga {
+   margin: 10px 0;
+   background: #ffcc00;
+   padding: 10px;
+   color: #000;
+}
+
+
+/* ===========Navigation========= */
+
+nav {
+   background-color: #333;
+   color: white;
+   padding: 10px 20px;
+   background-color: transparent;
+}
+
+.nav-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
+h1{
+   font-size: 24px;
+   font-weight: bold;
+   color: #4CAF50;
+}
+
+.menu {
+   display: flex;
+   align-items: center;
+   margin-right: 40px;
+}
+
+.menu-item {
+   margin: 0 10px;
+   cursor: pointer;
+   text-decoration: none;
+   color: white;
+   border-bottom: 3px solid transparent;
+}
+
+.menu-item:hover {
+   border-bottom: 3px solid #fff;
+}
+
+/* ================================ Search ============================== */
+
+
+.search-container {
+   position: relative;
+   width: 200px;
+   margin: 14px auto;
+   background-color: transparent;
+}
+
+#search-input {
+   width: 100%;
+   padding: 10px;
+   font-size: 16px;
+   height: 28px;
+   border-radius: 14px;
+   opacity: 0.5;
+}
+
+/* ============ Titele Search Js ================================== */
+.judul-search {
+   color: black;
+}
+
+
+.suggestions {
+   position: absolute;
+   border-top: none;
+   z-index: 1000;
+   background-color: white;
+   width: 100%;
+   border-radius: 6px;
+}
+
+.suggestion-item {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   cursor: pointer;
+}
+
+.suggestion-item img {
+   width: 26px;
+   height: 26px;
+   margin-right: 10px;
+}
+
+/* ================================ Bar Hamburger ======================== */
+
+
+.hamburger {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+}
+
+.hamburger .bar {
+   width: 25px;
+   height: 3px;
+   background-color: white;
+   margin: 3px 0;
+}
+
+/* ================================ CONTENT NEW RELEASES =============================== */
+
+.contentPopuler {
+   width: 100%;
+   height: 1000px;
+   gap: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 5px;
+   flex-wrap: wrap;
+   /* border: 2px solid white; */
+}
+
+.box {
+   width: 200px;
+   height: 280px;
+   display: block;
+   flex-wrap: wrap;
+   background-color: white;
+   border-radius: 6px;
+}
+
+.bxs-right-arrow {
+   position: absolute;
+   margin-left: 74px;
+   margin-top: 90px;
+   font-size: 26px;
+   color: yellow;
+   transform: translateY(100%);
+   /* Add transition for smooth effect */
+   transition: transform 1s ease-in-out;
+}
+
+.bxs-right-arrow {
+   cursor: pointer;
+}
+
+.bx-x {
+   margin-left: 178px;
+   position: absolute;
+   font-size: 26px;
+   color: white;
+}
+
+
+.box .video {
+   width: 100%;
+   height: 100%;
+   transition: all ease 0.3s;
+}
+
+
+.kualitasDua{
+   color : white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 10px;
+   background-color: #4CAF50;
+   position :absolute;
+   font-weight: 600;
+   width: 80px;
+   border-radius: 4px;
+}
+
+.imgDua {
+   width: 100%;
+   height: 80%;
+   object-fit: cover;
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
+}
+
+.box .imgDua:hover {
+   cursor: pointer;
+}
+
+
+.titleDua {
+   position: absolute;
+   white-space: pre-line;
+   margin-left: 32px;
+   margin-top: 244px;
+   font-weight: 900;
+   color: #e70634;
+}
+
+.teks-one-releases {
+   color: red;
+   margin-left: 54px;
+}
+
+.teks-two-releases {
+   color: red;
+   margin-left: 24px;
+}
+
+.teks-three-releases {
+   color: red;
+   margin-left: 46px;
+   margin-top: 228px;
+   text-align: center;
+}
+
+.teks-for-releases {
+   color: red;
+   margin-left: 68px;
+}
+
+.teks-five-releases {
+   color: red;
+   margin-left: 40px;
+}
+
+
+.categoryPopuler{
+   margin-left: 80px;
+   margin-top: 28px;
+   height: 40px;
+   width: 180px;
+   display: flex;
+   align-items: center;
+}
+
+.populer {
+   font-size: 24px;
+   color: white;
+}
+
+.leadMorePopuler {
+   font-size: 16px;
+   color: white;
+}
+
+.leadMorePopuler:hover {
+   font-size: 18px;
+   color: red;
+   cursor: pointer;
+}
+
+
+/* ================================ Nomor Halaman =============================== */
+.nomorHalaman {
+   height: 50px;
+   width: 200px;
+   margin-left: 538px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #464646;
+   margin-top: 50px;
+}
+
+.ancor {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #ffffff;
+   margin: 0px 13px;
+   opacity: 0.5;
+   transition: all ease 0.3s;
+}
+
+.ancor:hover {
+   opacity: 1;
+   transition: all ease 0.3s;
+}
+
+.titik {
+   font-size: 20px;
+   color: #ffffff;
+   opacity: 0.5;
+
+}
+
+/* ======================== Responsive ============================ */
+
+@media (max-width: 1024px) {
+
+   .menu-item.dropdown .dropdown-content {
+      position: static;
+      box-shadow: none;
+  }
+
+  .menu-item.dropdown:hover .dropdown-content {
+      display: none;
+  }
+
+  .dropdown-content a {
+      padding-left: 30px;
+  }
+
+   .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+  }
+ 
+  .menu-item {
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  .search-container {
+     width: 100%;
+     padding: 10px 0;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+  
+  .menu.active {
+      display: flex;
+  }
+
+
+.content, .contentPopuler, .contentRomance, .contentAction {
+   height: 1400px;
+   width: 100%;
+   margin-bottom: 40px;
+}
+
+.header-bg {
+   width: 100%;
+}
+
+
+}
+
+
+@media (max-width: 768px) {
+
+   .menu-item.dropdown .dropdown-content {
+      position: static;
+      box-shadow: none;
+  }
+
+  .menu-item.dropdown:hover .dropdown-content {
+      display: none;
+  }
+
+  .dropdown-content a {
+      padding-left: 30px;
+  }
+
+   .menu {
+       display: none;
+       flex-direction: column;
+       width: 100%;
+   }
+  
+   .menu-item {
+       margin: 10px 0;
+       text-align: center;
+   }
+
+   .search-container {
+      width: 100%;
+      padding: 10px 0;
+   }
+
+   .hamburger {
+       display: flex;
+   }
+   
+   .menu.active {
+       display: flex;
+   }
+
+   .content, .contentPopuler, .contentRomance, .contentAction {
+      height: 1510px;
+      width: 100%;
+      margin-bottom: 40px;
+   }
+}
+
+
+@media (max-width: 426px){
+
+   /* MENGATUR BACKGROUND DAN NAVBAR SERTA SEACH */
+   .header-bg {
+      width: 100%;
+   }
+
+   .title-background {
+      font-size: 10px;
+   }
+
+   .umur {
+      margin: 0px;
+      font-size: 10px;
+   }
+   .tahun {
+      margin: 0px;
+      font-size: 10px;
+   }
+
+   .harga {
+      margin: 0px;
+      padding: 0px;
+      font-size: 10px;
+   }
+
+   .rating, .kotak-rating, .kotakHarga, .director, .deskripsi, .actor {
+      margin-bottom: 0px;
+   }
+
+   .actor {
+      font-size: 10px;
+   }
+
+   .director {
+      font-size: 10px;
+   }
+
+   .deskripsi {
+      font-size: 10px;
+   }
+
+   h1 {
+      font-size: 15px;
+   }
+
+   .garis-lurus-satu, .garis-lurus-dua, .garis-lurus-tiga, .episodeText-text, .episode {
+      font-size: 10px;
+   }
+
+   .bx-star, .rating, .text-category  {
+      font-size: 10px;
+   }
+
+   .menu-item, #search-input, .judul-search {
+      font-size: 10px;
+   }
+
+   .leadMorePopuler, .leadMoreAction, .leadMoreRomance, .leadMoreTrend  {
+      font-size: 12px;
+   }
+
+   .kualitas, .kualitasDua, .kualitasTiga, .kualitasEmpat {
+      font-size: 12px;
+   }
+
+   .action, .romance, .populer, .trending {
+      font-size: 15px;
+   }
+
+   .content, .contentPopuler, .contentRomance, .contentAction {
+      height: 1600px;
+      width: 100%;
+      margin-bottom: 10px;
+   }
+
+   .box {
+      width: 140px;
+      height: 150px;
+   }
+
+   .poster {
+      width: 140px;
+      height: 140px;
+   }
+
+   
+
+   .suggestion-item {
+      padding: 5px;
+   }
+
+   .menu-item {
+      margin: 5px 0px;
+      text-align: center;
+  }
+
+  /* MENGATUR POSISI TITLE DRAMA */
+
+  .title {
+   font-size: 12px;
+   }
+
+   .title.teks-one-trending {
+      margin-top: 126px;
+      margin-left: 12px;
+   }
+
+   .title.teks-two-trending {
+      margin-top: 126px;
+      margin-left: 20px;
+   }
+
+   .title.teks-three-trending {
+      margin-top: 118px;
+      margin-left: 10px;
+      text-align: center;
+   }
+
+   .title.teks-for-trending {
+      margin-top: 126px;
+      margin-left: 18px;
+   }
+
+   .title.teks-five-trending {
+      margin-top: 126px;
+      margin-left: 34px;
+   }
+
+   .title.teks-six-trending {
+      margin-top: 126px;
+      margin-left: 48px;
+   }
+
+   .title.teks-seven-trending {
+      margin-top: 118px;
+      margin-left: 28px;
+      text-align: center;
+   }
+
+   .title.teks-eight-trending {
+      
+      margin-top: 118px;
+      margin-left: 34px;
+      text-align: center;
+   }
+
+
+   .titleDua {
+      font-size: 12px;
+      margin-top: 126px;
+      margin-left: 16px
+   }
+
+   .titleDua.teks-one-releases {
+      margin-top: 126px;
+      margin-left: 36px;
+   }
+
+   .titleDua.teks-two-releases {
+      margin-top: 126px;
+      margin-left: 14px;
+   }
+
+   .titleDua.teks-three-releases {
+      margin-left: 28px;
+      margin-top: 117px;
+      text-align: center;
+   }
+
+   .titleDua.teks-for-releases {
+      margin-top: 126px;
+      margin-left: 40px;
+   }
+
+   .titleDua.teks-five-releases {
+      margin-top: 126px;
+      margin-left: 28px;
+   }
+
+
+   .titleTiga {
+      margin-top: 126px;
+      margin-left: 10px;
+      font-size: 12px;
+   }
+
+   .titleTiga.teks-one-top {
+      margin-left: 46px;
+   }
+
+   .titleTiga.teks-two-top {
+      margin-left: 28px;
+   }
+
+   .titleTiga.teks-three-top {
+      margin-left: 36px;
+      margin-top: 118px;
+      text-align: center;
+   }
+
+   .titleTiga.teks-for-top {
+      margin-top: 126px;
+      margin-left: 32px
+   }
+
+   .titleTiga.teks-five-top {
+      margin-left: 28px;
+      margin-top: 118px;
+      text-align: center;
+   }
+
+   .titleTiga.teks-six-top {
+      margin-top: 118px;
+      margin-left: 18px;
+   }
+
+   .titleTiga.teks-seven-top {
+      margin-top: 126px;
+      margin-left: 40px;
+   }
+
+   .titleTiga.teks-eight-top {
+      margin-top: 126px;
+      margin-left: 12px
+   }
+
+
+   .titleEmpat {
+   margin-top: 126px;
+   margin-left: 14px;
+   font-size: 12px;
+   }
+
+   .titleEmpat.teks-one-recom {
+   margin-top: 126px;
+      margin-left: 42px;
+   }
+
+   .titleEmpat.teks-two-recom {
+      margin-top: 126px;
+      margin-left: 28px;
+   }
+
+   .titleEmpat.teks-three-recom {
+      margin-left: 34px;
+      margin-top: 118px;
+      text-align: center;
+   }
+
+   .titleEmpat.teks-for-recom {
+      margin-left: 32px;
+      margin-top: 126px;
+   }
+
+   .titleEmpat.teks-five-recom {
+      margin-top: 126px;
+      margin-left: 22px;
+   }
+
+   .titleEmpat.teks-six-recom {
+      margin-top: 126px;
+      margin-left: 28px;
+   }
+
+   .titleEmpat.teks-seven-recom {
+      margin-left: 32px;
+      margin-top: 118px;
+      text-align: center;
+   }
+
+   /* PENGATURAN PENGHILANGAN MARGIN */
+   .contentAction {
+      margin: 0;
+   }
+
+   .categoryAction {
+      margin-left: 0;
+   }
+
+   .categoryAction {
+      margin-left: 0;
+   }
+
+   .contentRomance {
+      margin: 0;
+   }
+
+   .contentPopuler {
+      margin: 0;
+   }
+
+   .content {
+      margin: 0;
+   }
+
+   /* MENGETUR AGAR CATEGURY NYA KE TENGAH */
+   .categoryAction, .categoryPopuler, .categoryRomance, .categoryTrending {
+      margin: 4px;
+   }
+
+}

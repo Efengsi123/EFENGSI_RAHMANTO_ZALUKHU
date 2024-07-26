@@ -1,0 +1,587 @@
+
+*{
+   padding: 0px;
+   margin: 0px;
+   font-family: "poppins";
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: black;
+   color: #fff;
+
+   /* ======================== agar user tidak bisa mendrag dan memblok gambar, teks yg ada di halaman web */
+   -user-drag: none;
+   -webkit-user-drag: none;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
+/* Menghapus garis bawah pada elemen tautan (a). */
+a {
+   text-decoration: none;
+}
+
+/* Mengatur header agar memiliki lebar penuh, tinggi 580px, dan gambar latar belakang yang menutupi seluruh area 
+dengan posisi di tengah. Juga ada transisi halus untuk perubahan gambar latar belakang. */
+header {
+   width: 100%;
+   height: 580px;
+   background-size: cover;
+   background-position: center;
+   position: relative;
+   transition: background-image 1s ease-in-out;
+}
+
+/* Mengatur elemen main agar ditampilkan sebagai blok. */
+main {
+   display: block;
+}
+
+/* ============================== Cover ========================= */
+
+/* Mengatur konten dalam header agar berada di posisi bawah kiri, dengan warna teks putih, 
+font "Poppins", latar belakang hitam transparan */
+.header-content {
+   position: absolute;
+   bottom: 60px;
+   left: 40px;
+   color: #fff;
+   font-family: 'Poppins', sans-serif;
+   max-width: 50%;
+   background: rgba(0, 0, 0, 0.5);
+   border-radius: 6px;
+}
+
+/* Mengatur navigasi agar berada di posisi atas dengan lebar penuh, 
+menggunakan flex untuk penyusunan elemen di dalamnya. */
+.nav-container {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+}
+
+/* Mengatur margin bawah untuk beberapa elemen dan tampilan inline-block dengan margin 
+kanan untuk elemen span dalam rating dan genre. */
+.rating, .kotak-rating, .kotakHarga, .director, .deskripsi, .actor {
+   margin-bottom: 10px;
+}
+
+
+.rating span, .gendre span {
+   display: inline-block;
+   margin-right: 5px;
+}
+
+/* mengatur margin dan warna untuk elemen rating dan beberapa elemen lainnya, 
+serta warna kuning untuk ikon bintang. */
+.rating {
+   margin: 5px;
+   color: #ffcc00;
+} 
+
+.umur {
+   margin: 5px;
+}
+
+.tahun {
+   margin: 5px;
+}
+
+.episode {
+   margin: 5px;
+}
+
+.bx-star {
+  color: #ffcc00;
+}
+
+/* Mengatur warna teks untuk judul latar belakang dan pengaturan margin, latar belakang, 
+padding, serta warna teks untuk elemen harga. */
+.title-background {
+   color: #fff;
+}
+
+.harga {
+   margin: 10px 0;
+   background: #ffcc00;
+   padding: 10px;
+   color: #000;
+}
+
+
+/* ===========Navigation========= */
+/* Mengatur navigasi dengan warna latar belakang gelap, teks berwarna putih, dan padding. */
+nav {
+   background-color: #333;
+   color: white;
+   padding: 10px 20px;
+   background-color: transparent;
+}
+
+.nav-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+/* Mengatur tampilan judul web dan elemen menu dengan pengaturan margin, warna, dan efek hover. */
+.web-judul{
+   font-size: 24px;
+   font-weight: bold;
+   color: #4CAF50;
+}
+
+.menu {
+   display: flex;
+   align-items: center;
+   margin-right: 40px;
+}
+
+/* Mengatur tampilan judul web dan elemen menu dengan 
+pengaturan margin, warna, dan efek hover. */
+.menu-item {
+   margin: 0 10px;
+   cursor: pointer;
+   text-decoration: none;
+   color: white;
+   border-bottom: 3px solid transparent;
+}
+
+.menu-item:hover {
+   border-bottom: 3px solid #fff;
+}
+
+/* ================================ Search ============================== */
+
+/* Mengatur elemen pencarian dengan posisi relatif, lebar, margin, 
+dan pengaturan input pencarian. */
+.search-container {
+   position: relative;
+   width: 200px;
+   margin: 14px auto;
+   background-color: transparent;
+}
+
+#search-input {
+   width: 100%;
+   padding: 10px;
+   font-size: 16px;
+   height: 28px;
+   border-radius: 14px;
+   opacity: 0.5;
+}
+
+/* ============ Titele Search Js ================================== */
+/* Mengatur tampilan saran pencarian dengan warna, posisi, z-index, latar belakang, dan padding. */
+.judul-search {
+   color: black;
+}
+
+.suggestions {
+   position: absolute;
+   border-top: none;
+   z-index: 1000;
+   background-color: white;
+   width: 100%;
+   border-radius: 6px;
+}
+
+.suggestion-item {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   cursor: pointer;
+}
+
+.suggestion-item img {
+   width: 26px;
+   height: 26px;
+   margin-right: 10px;
+}
+
+/* ================================ Bar Hamburger ======================== */
+/* Mengatur tampilan menu hamburger dengan lebar, tinggi, warna latar belakang, dan margin. */
+.hamburger {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+}
+
+.hamburger .bar {
+   width: 25px;
+   height: 3px;
+   background-color: white;
+   margin: 3px 0;
+}
+
+
+
+/* ====================== content ====================================== */
+
+/* Mengatur kontainer konten dengan lebar maksimal, margin auto, dan padding. */
+.content-container {
+   max-width: 1200px;
+   margin: auto;
+   padding: 20px;
+}
+
+/* Mengatur gambar sampul dengan posisi, lebar, tinggi, dan pengaturan latar belakang. */
+.content-header {
+   position: relative;
+   width: 100%;
+   height: 500px;
+   background-size: cover;
+   background-position: center;
+}
+
+/* Mengatur tampilan judul dan elemen badge dengan pengaturan 
+ukuran font, margin, warna, padding, dan border-radius. */
+.gambar-cover {
+   width: 200px;
+   height: 200px; 
+}
+
+.bx {
+   color: #ffcc00;
+   font-size: 20px;
+}
+
+.judul{
+   font-size: 36px;
+   margin: 0;
+}
+
+.badge-container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin: 10px 0;
+}
+
+.badge {
+   background: gray;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 14px;
+}
+
+.badge.green {
+   background: green;
+}
+
+.details {
+   display: flex;
+   gap: 10px;
+   margin: 10px 0;
+}
+
+.tags {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin: 10px 0;
+}
+
+.tags span {
+   background: gray;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 14px;
+}
+
+/* Mengatur tampilan detail dan tag dengan penggunaan flexbox, margin, dan padding. */
+.vip-price {
+   background: #ffcc00;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 14px;
+   margin: 10px 0;
+   color: #1b1b1b;
+}
+
+.director, .cast, .description {
+   margin: 10px 0;
+}
+
+.actions {
+   display: flex;
+   gap: 10px;
+   margin-top: 10px;
+}
+
+/* Mengatur margin untuk elemen sutradara, pemeran, deskripsi, 
+dan tombol tindakan dengan penggunaan flexbox dan pengaturan tampilan tombol. */
+.play-button, .share-button, .app-button, .favorite-button {
+   background: green;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+.play-button {
+   background: green;
+}
+
+.share-button {
+   background: gray;
+}
+
+.app-button {
+   background: gray;
+}
+
+.favorite-button {
+   background: gray;
+}
+
+/* Mengatur tampilan tab dengan penggunaan flexbox, cursor pointer, padding, dan efek hover. */
+.tab-container {
+   display: flex;
+   gap: 20px;
+   margin-top: 20px;
+}
+
+.tab {
+   cursor: pointer;
+   padding: 10px 20px;
+   border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+   border-bottom: 3px solid green;
+}
+
+@media (max-width: 1440px) {
+   .content-header {
+      width: 100%;
+   }
+
+   .content-container {
+      margin: 0px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+/* mengatur nav menu */
+   .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .menu-item {
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  .search-container{
+     width: 100%;
+     padding: 10px 0;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+  
+  .menu.active {
+      display: flex;
+  }
+
+
+  /* mengatur isi content */
+
+   .badge, .tags span, .vip-price {
+       font-size: 12px;
+       padding: 3px 8px;
+   }
+
+   .actions {
+       flex-direction: column;
+       gap: 5px;
+   }
+
+   .play-button, .share-button, .app-button, .favorite-button {
+       padding: 8px 16px;
+       font-size: 12px;
+   }
+
+   .tab-container {
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .tab {
+       padding: 8px 16px;
+   }
+
+   /* mengatur margin-button  */
+   .content-header {
+      margin-bottom: 100px;
+   }
+}
+
+
+@media (max-width: 426px) {
+   /* mwngatur text yang ada di dalam cover header dan search*/
+   .header-bg {
+      width: 100%;
+   }
+
+   .title-background {
+      font-size: 10px;
+   }
+
+   .umur {
+      margin: 0px;
+      font-size: 10px;
+   }
+   .tahun {
+      margin: 0px;
+      font-size: 10px;
+   }
+
+   .harga {
+      margin: 0px;
+      padding: 0px;
+      font-size: 10px;
+   }
+
+   .rating, .kotak-rating, .kotakHarga, .director, .deskripsi, .actor {
+      margin-bottom: 0px;
+   }
+
+   .actor {
+      font-size: 10px;
+   }
+
+   .director {
+      font-size: 10px;
+   }
+
+   .deskripsi {
+      font-size: 10px;
+   }
+
+   h1 {
+      font-size: 15px;
+   }
+
+   .garis-lurus-satu, .garis-lurus-dua, .garis-lurus-tiga, .episodeText-text, .episode {
+      font-size: 10px;
+   }
+
+   .bx-star, .rating, .text-category  {
+      font-size: 10px;
+   }
+
+   .menu-item, #search-input, .judul-search {
+      font-size: 10px;
+   }
+
+   /* mengatur nav menu */
+   .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+   }
+
+   .menu-item {
+      margin: 10px 0;
+      text-align: center;
+   }
+
+   .search-container{
+   width: 100%;
+   padding: 10px 0;
+   }
+
+   .hamburger {
+      display: flex;
+   }
+
+   .menu.active {
+      display: flex;
+   }
+
+
+   /* mengatur isi content */
+   .judul {
+   font-size: 18px;
+   }
+
+   .trailer-cover {
+   height: 40px;
+   }
+
+   .badge, .tags span, .vip-price {
+   font-size: 12px;
+   padding: 3px 8px;
+   }
+
+   .actions {
+   flex-direction: column;
+   gap: 5px;
+   }
+
+   .play-button, .share-button, .app-button, .favorite-button {
+   padding: 8px 16px;
+   font-size: 12px;
+   }
+
+   .tab-container {
+   flex-direction: column;
+   gap: 10px;
+   }
+
+   .tab {
+   padding: 8px 16px;
+   }
+
+   /* mengatur margin-button  */
+   .content-header {
+   margin-bottom: 100px;
+   }
+
+   .header-bg {
+      width: 90%;
+      height: 80%;
+   }
+
+   .tags {
+      margin: 5px;
+   }
+
+   .vip-price {
+      margin: 5px;
+   }
+
+   /* mengatur video drama trailer */
+   .video {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid white;
+   }
+
+   /* mengatue ukuran font size TOP 1 peringkat popularitas drama original */
+   .bedge, .bedge-green, .ratingg, .yeah, .episodee, .directorr, .cast, .description {
+      font-size: 14px;
+   }
+
+   
+
+
+}
+
